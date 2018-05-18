@@ -1,10 +1,10 @@
 # Projet statistique avec R
-# Sujet 5 : r??gression logit
+# Sujet 5 : regression logit
 # 
-# Quentin NOUVELLON, Kilian POULAIN, Nicolas S??NAVE
+# Quentin NOUVELLON, Kilian POULAIN, Nicolas SENAVE
 
 
-## Param??tres
+## Parametres
 
 n <- 100
 
@@ -12,7 +12,7 @@ val_delta <- 1.0
 val_beta <- 2.0
 
 
-## Fonctions math??matiques
+## Fonctions mathematiques
 
 f_logit <- function(x, delta=val_delta,beta=val_beta){
   exp(delta+x*beta) / (1 + exp(delta+x*beta))
@@ -30,9 +30,9 @@ grad_logit <- function(x, delta=val_delta,beta=val_beta){
 ## Fonctions du package
 
 simulation <- function(){
-  # G??n??re n r??alisations ind??pendantes (x1,y1), ..., (xn,yn) 
-  # du couple (X,Y) o?? X suit une loi normale centr??e r??duite 
-  # et o?? Y|X = x suit un mod??le logit de param??tres (delta,beta).
+  # Genere n realisations independantes (x1,y1), ..., (xn,yn) 
+  # du couple (X,Y) ou X suit une loi normale centree reduite 
+  # et ou Y|X = x suit un modele logit de parametres (delta,beta).
   x <- c(rnorm(n))
   Y <- c(1:100)
   for (i in (1:n)){
@@ -47,8 +47,8 @@ simulation <- function(){
 }
 
 visualisation <- function(){
-  # Repr??sente graphiquement la distribution de Y conditionnellement ?? X = x 
-  # en fonction de x pour des valeurs donn??es de delta et beta. C'est une bernoulli. Barplot
+  # Represente graphiquement la distribution de Y conditionnellement a X = x 
+  # en fonction de x pour des valeurs donnees de delta et beta. C'est une bernoulli. Barplot
   x <- runif(1000,-3,3)
   plot(x,densite_logit(x),type=('p'))
 }
@@ -135,10 +135,10 @@ newtonraphson(x,y)
  
 
 prediction <- function(echantillon,delta,beta){
-  # Prend comme arguments n r??alisations ind??pendantes (x1,...,xn) de X 
-  # ainsi que des param??tres (delta,beta). 
+  # Prend comme arguments n realisations independantes (x1,...,xn) de X 
+  # ainsi que des parametres (delta,beta). 
   # Cette fonction retourne P(Y = 1|X = xi) pour chaque xi 
-  # ainsi qu'une valeur pr??dite yhat_i.
+  # ainsi qu'une valeur predite yhat_i.
   proba <- vector("numeric",n)
   yhat_i <- 0.0
   
@@ -152,7 +152,7 @@ prediction1<-function(x){
 }
 
 statbeta <- function(){
-  # Retourne la p-valeur associ??e au test de nullit?? du coefficient beta 
+  # Retourne la p-valeur associee au test de nullite du coefficient beta 
   # ainsi que l'intervalle de confiance de beta au niveau 95%.
   p_val <- 0.0
   IC_lower <- 0.0
