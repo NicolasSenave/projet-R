@@ -20,5 +20,5 @@ statbeta <- function(){
   IC_lower <- 0.0
   IC_upper <- 0.0
   
-  return(p_val,IC_lower,IC_upper)
+  return(c(p_val,IC_lower,IC_upper))
 }
