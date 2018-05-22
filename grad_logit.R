@@ -1,7 +1,7 @@
 ###################################################################################
 ##'
 ##'
-##' Renvoie le gradient de la log-varisemblance 
+##' Renvoie le gradient de la log-varisemblance
 ##' du modele logit de parametres (delta,beta)
 ##' sur les donnees explicatives x et les donnees d'interet binaires y.
 ##'
