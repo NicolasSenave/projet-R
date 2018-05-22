@@ -1,9 +1,9 @@
 ###################################################################################
 ##'
 ##'
-##' Estime les parametres (delta, beta) du maximum de vraisemblance 
-##' du modele logistique pour un couple de donnees 
-##' X (donnees explicatives) et Y (reponses binaires), 
+##' Estime les parametres (delta, beta) du maximum de vraisemblance
+##' du modele logistique pour un couple de donnees
+##' X (donnees explicatives) et Y (reponses binaires),
 ##' par un algorithme de Newton-Raphson.
 ##'
 ##' @param x numeric. L'echantillon des donnees explicatives.
@@ -38,5 +38,5 @@ estimation <- function(x,y){
   }
   delta = v1[1]
   beta = v1[2]
-  return(c(delta,beta))             
+  return(c(delta,beta))
 }

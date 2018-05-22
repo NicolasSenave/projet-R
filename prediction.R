@@ -1,15 +1,15 @@
 ###################################################################################
 ##'
 ##'
-##' Prend comme arguments un echantillon de n realisations independantes 
-##' (x1,...,xn) d'un echantillon ainsi que des parametres (delta,beta) 
-##' du modèle logit.
+##' Prend comme arguments un echantillon de n realisations independantes
+##' (x1,...,xn) d'un echantillon ainsi que des parametres (delta,beta)
+##' du modÃ¨le logit.
 ##' Cette fonction retourne deux vecteurs P et Yhat de longueur n :
 ##' - P contenant les P(Y = 1|X = xi) pour chaque xi ;
 ##' - Yhat contenant les valeurs predites de Y ;
 ##' ou Y|X = xi suit un modele logit de parametres (delta,beta).
 ##'
-##' @param echantillon numeric. Un echantillon de données explicatives.
+##' @param echantillon numeric. Un echantillon de donnÃ©es explicatives.
 ##' @param delta numeric. Parametre delta du modele logistique.
 ##' @param beta numeric. Parametre beta du modele logistique.
 ##'

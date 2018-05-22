@@ -1,8 +1,8 @@
 ###################################################################################
 ##'
 ##'
-##' Retourne la p-valeur associee au test de nullite du coefficient beta 
-##' ainsi que l'intervalle de confiance de beta au niveau 95%.
+##' Retourne la p-valeur associee au test de nullite du coefficient beta
+##' ainsi que l'intervalle de confiance de beta au niveau 95 pourcents.
 ##'
 ##' @param x numeric.
 ##' @param y numeric.

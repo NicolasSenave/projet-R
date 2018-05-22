@@ -1,6 +1,8 @@
 ##' Regression logistique
 ##'
-##' Ici décrire le but du package
+##' Ce package permet d'effectuer une regression logistique pour estimer
+##' les parametres d'un jeu de donnees X explicatives continues et Y d'interet binaires.
+##'
 ##'
 ##' \tabular{ll}{
 ##'   Package: \tab regressionLogit\cr
@@ -17,11 +19,18 @@
 ##' @rdname regressionLogit-package
 ##' @docType package
 ##' @keywords package
-##' @importFrom c rnorm runif as.numeric list unlist hist
 ##' @author
 ##' Quentin NOUVELLON, Killian Poulain, Nicolas SENAVE
 ##'
 ##'
 ##' @examples
-##' # Ici mettre un exemple de l'utilisation des fonctions du package
+##' X,Y <- "vos donnees"
+##'
+##' param <- estimation(X,Y)
+##' beta_estime <- param[1]
+##' delta_estime <- param[2]
+##'
+##' visualisation(X,Y)
+##'
+##'
 NULL

@@ -1,31 +1,29 @@
 ###################################################################################
 ##'
 ##'
-##' Represente graphiquement la distribution de Y conditionnellement a X = x 
+##' Represente graphiquement la distribution de Y conditionnellement a X = x
 ##' en fonction de x ou X est un echantillon de valeurs explicatives
 ##' et ou Y est un echantillon d'interet binaires.
 ##'
 ##' @param X numeric. Un echantillon de donnees explicatives.
 ##' @param Y numeric. Un echantillon de donnees binaires.
-##' @param nb_col numeric. Par défaut nb_col=10. Nombre de colonnes de l'histogramme.
+##' @param param numeric. c(delta,beta). Par defaut param=c().
+##' @param nb_col numeric. Par dÃ©faut nb_col=10. Nombre de colonnes de l'histogramme.
 ##'
 ##' @examples
-##' sim <- simulation(n,delta,beta)
+##' sim <- simulation(100, 1.0, 2.0)
 ##' X <- as.numeric(unlist(sim[1]))
 ##' Y <- as.numeric(unlist(sim[2]))
-##' visualisation(X,Y)
+##' visualisation(X,Y, c(1.0,2.0) )
 ##'
-##' @return NULL. Affiche la représentation graphique.
+##' @return NULL. Affiche la reprÃ©sentation graphique.
 ##' @export
 ##'
 ##'
 
 
-visualisation <- function(X,Y,nb_col=10){
-  
-  # Affiche le graphe avec la courbe theorique et les y
-  
-  # Points de l'echantillon y
+visualisation <- function(X,Y,param=NULL,nb_col=10){
+
   plot(X,Y,
        main = "Courbe theorique et points de l'echantillon binaire Y",
        xlab = "Valeurs x de l'echantillon X",
@@ -33,17 +31,16 @@ visualisation <- function(X,Y,nb_col=10){
   legend("right",
          legend = "Valeurs de Y|X=x dans la simulation",
          pch=1, cex=0.7)
-  
-  # Courbe theorique
-  abscisses <- seq(min(X), max(X), 0.01)
-  lines(abscisses, f_logit(abscisses,delta,beta),
-        col = "red")
-  legend("bottomright",
-         legend = "E(Y|X=x)",
-         col = "red", lty=1:0, cex=0.7)
-  
-  # Affichage de l'histogramme des la répartition des y
-  
+
+  if (length(param) == 2){
+    abscisses <- seq(min(X), max(X), 0.01)
+    lines(abscisses, f_logit(abscisses,param[1],param[2]),
+          col = "red")
+    legend("bottomright",
+           legend = "E(Y|X=x)",
+           col = "red", lty=1:0, cex=0.7)
+  }
+
   n = length(X)
   distribution_y <- c()
   k = 0
@@ -58,5 +55,5 @@ visualisation <- function(X,Y,nb_col=10){
        main="Distribution de Y conditionnellement a X=x",
        xlab="Valeurs x de l'echantillon X",
        ylab="Card(Y = 1|X=x)")
-  
+
 }

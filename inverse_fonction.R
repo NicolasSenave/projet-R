@@ -7,7 +7,7 @@
 ##' @param matrice matrix. Matrice 2x2 de la fonction.
 ##'
 ##' @examples
-##' mat = matrix(c(2,0,0,3), nrow=2,ncol=2) 
+##' mat = matrix(c(2,0,0,3), nrow=2,ncol=2)
 ##' inversefonction(mat)
 ##'
 ##' @return matrix. Matrice inversee 2x2.
