@@ -1,8 +1,15 @@
 # projet-R
 
+
 # Lien du rapport
 
 https://www.sharelatex.com/3613117974sxbqwtqnxypr
+
+
+# 22/05 15:30 Nico
+
+Le package est complet maintenant. Je vais peut-être encore modifier un peu visualisation et statbeta.
+
 
 # 21/05 10:50 Nico
 
