@@ -22,6 +22,28 @@
 
 
 visualisation <- function(X,Y,nb_col=10){
+  
+  # Affiche le graphe avec la courbe theorique et les y
+  
+  # Points de l'echantillon y
+  plot(X,Y,
+       main = "Courbe theorique et points de l'echantillon binaire Y",
+       xlab = "Valeurs x de l'echantillon X",
+       ylab = "")
+  legend("right",
+         legend = "Valeurs de Y|X=x dans la simulation",
+         pch=1, cex=0.7)
+  
+  # Courbe theorique
+  abscisses <- seq(min(X), max(X), 0.01)
+  lines(abscisses, f_logit(abscisses,delta,beta),
+        col = "red")
+  legend("bottomright",
+         legend = "E(Y|X=x)",
+         col = "red", lty=1:0, cex=0.7)
+  
+  # Affichage de l'histogramme des la répartition des y
+  
   n = length(X)
   distribution_y <- c()
   k = 0
@@ -36,4 +58,5 @@ visualisation <- function(X,Y,nb_col=10){
        main="Distribution de Y conditionnellement a X=x",
        xlab="Valeurs x de l'echantillon X",
        ylab="Card(Y = 1|X=x)")
+  
 }
